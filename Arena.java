@@ -1,20 +1,24 @@
 public class Arena {
+
     public static void main(String[] args) {
 
-        Monster monster1 = new Monster("Guigui", 6, 21);
+        Monster monstreA = new Monster("Monstre A", 2, 12);
+        Monster monstreB = new Monster("Monstre B", 3, 9);
 
-        Monster monster2 = new Monster("Di", 3, 18);
-        // Monster maxime = new Monster("Maxime", 3, 11);
-        // Monster jibé = new Monster("Jibé", 8, 17);
-        while (monster1.getLife() > 0 && monster2.getLife() > 0) {
+        // jusqu'à ce que 1 des 2 soit ko
+        // Tant que les 2 ne sont pas KO
 
-            monster1.attack(monster2);
-            if (monster2.getLife() <= 0) {
+        while (monstreA.getLife() > 0 && monstreB.getLife() > 0) {
 
+            monstreB.attack(monstreA);
+
+            if (monstreA.getLife() > 0) {
+                monstreA.attack(monstreB);
             }
-            monster1.attack(monster2);
 
         }
+
+        System.out.println("Fin du combat.");
 
     }
 
